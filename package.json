@@ -1,0 +1,16 @@
+{
+  "name": "chroniclecanvas-ios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Separate iOS wrapper for Chronicle Canvas using Apple subscriptions and the hosted web app.",
+  "scripts": {
+    "cap:sync": "npx cap sync ios",
+    "cap:open": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
+    "typescript": "^6.0.3"
+  }
+}

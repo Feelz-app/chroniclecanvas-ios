@@ -1,0 +1,16 @@
+{
+  "name": "chroniclecanvas-apple-sync-functions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Drop-in Firebase Functions module for Chronicle Canvas Apple subscription sync.",
+  "main": "src/index.js",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "@apple/app-store-server-library": "^1.6.0",
+    "firebase-admin": "^12.1.1",
+    "firebase-functions": "^5.0.1"
+  }
+}
+

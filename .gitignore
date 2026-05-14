@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+ios/App/App/public/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
