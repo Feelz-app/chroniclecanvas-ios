@@ -11,8 +11,6 @@ workflows:
         XCODE_PROJECT: "ios/App/App.xcodeproj"
         XCODE_SCHEME: "App"
         BUNDLE_ID: "com.chroniclecanvas.app"
-      groups:
-        - app_store_connect
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.chroniclecanvas.app
@@ -40,4 +38,3 @@ workflows:
         key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
         submit_to_testflight: true
-
