@@ -20,7 +20,7 @@ workflows:
       - name: Install npm dependencies
         script: |
           npm ci
-      - name: Sync Chronicle Canvas web bundle into iOS project
+      - name: Sync bundled Chronicle Canvas app into iOS project
         script: |
           npm run ios:sync
       - name: Apply App Store signing profiles
