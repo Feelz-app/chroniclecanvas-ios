@@ -20,9 +20,9 @@ workflows:
       - name: Install npm dependencies
         script: |
           npm ci
-      - name: Sync Capacitor iOS project
+      - name: Sync Chronicle Canvas web bundle into iOS project
         script: |
-          npm run cap:sync
+          npm run ios:sync
       - name: Apply App Store signing profiles
         script: |
           xcode-project use-profiles

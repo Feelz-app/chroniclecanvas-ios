@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Delete selected Chronicle Canvas data yourself without deleting the whole account.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://chroniclecanvas.us/delete-data.html">
+  <title>Delete Data | Chronicle Canvas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="publicPage deletePageBody" data-delete-page="data">
+  <main class="deleteCenterShell">
+    <section class="deleteHero">
+      <p class="eyebrow">Chronicle Canvas</p>
+      <h1>Delete only the data you actually want gone.</h1>
+      <p>Sign in, choose the exact data groups to clear, and leave the rest of the account alone. The labels below are written in plain English so there is less second-guessing before you press delete.</p>
+      <div class="deleteSummaryPill">Selective self-serve cleanup</div>
+    </section>
+
+    <div id="deletePageStatus" class="statusBanner deletePageStatus" hidden></div>
+
+    <section class="deleteCenterGrid">
+      <article class="deleteCenterCard">
+        <div id="deleteSignedOut" class="deleteGate">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h2>Sign in to the account you want to clean up</h2>
+            <p>If the account is still on this device, Chronicle Canvas will recognize it automatically. Otherwise, log in here with the same email and password you use in the app.</p>
+          </div>
+
+          <div class="deleteFieldStack">
+            <label class="fieldGroup">
+              <span>Email</span>
+              <input id="deleteEmailInput" type="email" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label class="fieldGroup">
+              <span>Password</span>
+              <input id="deletePasswordInput" type="password" autocomplete="current-password" placeholder="Password">
+            </label>
+          </div>
+
+          <div class="deleteGateActions">
+            <button id="deleteLoginBtn" type="button">Log In</button>
+            <button id="deleteResetBtn" type="button" class="secondaryBtn">Reset Password</button>
+          </div>
+        </div>
+
+        <div id="deleteSignedIn" class="deleteSignedInCard" hidden>
+          <div>
+            <p class="eyebrow">Step 2</p>
+            <h2>Choose what to delete</h2>
+            <p>You are signed in to the account these changes will affect.</p>
+          </div>
+
+          <div class="deleteSignedInEmail">
+            Signed in as: <span id="deleteSignedInEmail">Not signed in</span>
+          </div>
+
+          <div id="deleteDataOptionsGrid" class="deleteDataOptionsGrid">
+            <label class="toggleRow deleteDataOption" data-delete-option="events" data-owner-only-delete-option="true" for="deletePageBucketEvents">
+              <span>
+                <span class="inlineInfoRow">
+                  <strong>Timeline events</strong>
+                  <button type="button" class="infoBubble" aria-label="Deletes your active milestones, notes, subfolders, mini events, and the files attached to them." title="Deletes your active milestones, notes, subfolders, mini events, and the files attached to them.">i</button>
+                </span>
+                <small>Use this when you want the main timeline wiped clean.</small>
+              </span>
+              <input id="deletePageBucketEvents" type="checkbox" data-delete-bucket="events">
+            </label>
+
+            <label class="toggleRow deleteDataOption" data-delete-option="trash" data-owner-only-delete-option="true" for="deletePageBucketTrash">
+              <span>
+                <span class="inlineInfoRow">
+                  <strong>Trash</strong>
+                  <button type="button" class="infoBubble" aria-label="Deletes anything already sitting in Trash so it cannot be restored later." title="Deletes anything already sitting in Trash so it cannot be restored later.">i</button>
+                </span>
+                <small>Good for finishing a cleanup and clearing old discarded items.</small>
+              </span>
+              <input id="deletePageBucketTrash" type="checkbox" data-delete-bucket="trash">
+            </label>
+
+            <label class="toggleRow deleteDataOption" data-delete-option="attachments" data-owner-only-delete-option="true" for="deletePageBucketAttachments">
+              <span>
+                <span class="inlineInfoRow">
+                  <strong>Uploaded files</strong>
+                  <button type="button" class="infoBubble" aria-label="Deletes photos, PDFs, and other files. Your events stay, but the file slots become empty." title="Deletes photos, PDFs, and other files. Your events stay, but the file slots become empty.">i</button>
+                </span>
+                <small>Use this when the records can stay but the actual files need to go.</small>
+              </span>
+              <input id="deletePageBucketAttachments" type="checkbox" data-delete-bucket="attachments">
+            </label>
+
+            <label class="toggleRow deleteDataOption" data-delete-option="dashboard" for="deletePageBucketDashboard">
+              <span>
+                <span class="inlineInfoRow">
+                  <strong>Dashboard layout</strong>
+                  <button type="button" class="infoBubble" aria-label="Resets which dashboard cards you turned on or off. It does not delete your timeline." title="Resets which dashboard cards you turned on or off. It does not delete your timeline.">i</button>
+                </span>
+                <small>Handy when you want the dashboard back to its default layout.</small>
+              </span>
+              <input id="deletePageBucketDashboard" type="checkbox" data-delete-bucket="dashboard">
+            </label>
+
+            <label class="toggleRow deleteDataOption" data-delete-option="composer" for="deletePageBucketComposer">
+              <span>
+                <span class="inlineInfoRow">
+                  <strong>Composer layout</strong>
+                  <button type="button" class="infoBubble" aria-label="Resets the fields you hid, showed, or renamed while creating events." title="Resets the fields you hid, showed, or renamed while creating events.">i</button>
+                </span>
+                <small>Use this if you want the event builder back to the default setup.</small>
+              </span>
+              <input id="deletePageBucketComposer" type="checkbox" data-delete-bucket="composer">
+            </label>
+
+            <label class="toggleRow deleteDataOption" data-delete-option="sharing" data-owner-only-delete-option="true" for="deletePageBucketSharing">
+              <span>
+                <span class="inlineInfoRow">
+                  <strong>Authorized users</strong>
+                  <button type="button" class="infoBubble" aria-label="Removes the people you shared the paid workspace with and resets their view and edit access." title="Removes the people you shared the paid workspace with and resets their view and edit access.">i</button>
+                </span>
+                <small>Useful if you want to stop sharing before changing anything else.</small>
+              </span>
+              <input id="deletePageBucketSharing" type="checkbox" data-delete-bucket="sharing">
+            </label>
+          </div>
+
+          <p id="deleteDataRoleHint" class="deleteSmallNote">Owner-only items stay hidden for shared members. Shared members can still clear their own layout preferences here.</p>
+
+          <div class="deleteActionRow">
+            <button id="deleteSelectedDataBtn" type="button" class="secondaryBtn dangerBtn">Delete Selected Data</button>
+            <button id="deleteLogoutBtn" type="button" class="secondaryBtn">Log Out</button>
+          </div>
+        </div>
+      </article>
+
+      <aside class="deleteInfoStack">
+        <article>
+          <h3>What this page is for</h3>
+          <p>Use this when you want a cleanup instead of a full exit. It is the fastest way to remove a category of data without deleting the whole account.</p>
+        </article>
+        <article>
+          <h3>Need the full exit?</h3>
+          <p>If you want the sign-in gone too, use the <a href="delete-account.html">Delete Account</a> page instead. That is the permanent option.</p>
+        </article>
+        <article>
+          <h3>Quick links</h3>
+          <div class="deleteInlineLinks">
+            <a class="publicSecondary" href="app.html">Open App</a>
+            <a class="publicSecondary" href="privacy.html">Privacy</a>
+            <a class="publicSecondary" href="terms.html">Terms</a>
+            <a class="publicSecondary" href="mailto:info@chroniclecanvas.us">Support</a>
+          </div>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="delete-center.js"></script>
+</body>
+</html>

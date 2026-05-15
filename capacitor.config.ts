@@ -5,8 +5,6 @@ const config: CapacitorConfig = {
   appName: "Chronicle Canvas",
   webDir: "www",
   server: {
-    url: "https://chroniclecanvas.us/app.html?source=ios",
-    cleartext: false,
     allowNavigation: [
       "chroniclecanvas.us",
       "*.chroniclecanvas.us",

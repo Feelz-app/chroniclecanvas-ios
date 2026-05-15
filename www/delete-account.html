@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Delete your Chronicle Canvas account yourself, without emailing support.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://chroniclecanvas.us/delete-account.html">
+  <title>Delete Account | Chronicle Canvas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="publicPage deletePageBody" data-delete-page="account">
+  <main class="deleteCenterShell">
+    <section class="deleteHero">
+      <p class="eyebrow">Chronicle Canvas</p>
+      <h1>Delete your account without waiting on support.</h1>
+      <p>Sign in with the account you want to remove, optionally tell us why you're leaving, and delete it yourself in one pass. If the account owns a paid Chronicle Canvas plan, the subscription is canceled before the account disappears.</p>
+      <div class="deleteSummaryPill">Direct self-serve account deletion</div>
+    </section>
+
+    <div id="deletePageStatus" class="statusBanner deletePageStatus" hidden></div>
+
+    <section class="deleteCenterGrid">
+      <article class="deleteCenterCard">
+        <div id="deleteSignedOut" class="deleteGate">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h2>Sign in to the account you want to delete</h2>
+            <p>This page works even if the app has already been removed from your phone. Use the exact Chronicle Canvas email and password for the account you want gone.</p>
+          </div>
+
+          <div class="deleteFieldStack">
+            <label class="fieldGroup">
+              <span>Email</span>
+              <input id="deleteEmailInput" type="email" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label class="fieldGroup">
+              <span>Password</span>
+              <input id="deletePasswordInput" type="password" autocomplete="current-password" placeholder="Password">
+            </label>
+          </div>
+
+          <div class="deleteGateActions">
+            <button id="deleteLoginBtn" type="button">Log In</button>
+            <button id="deleteResetBtn" type="button" class="secondaryBtn">Reset Password</button>
+          </div>
+
+          <p class="deleteSmallNote">Need a lighter touch instead? Use the <a href="delete-data.html">Delete Data</a> page to remove only specific parts of the account.</p>
+        </div>
+
+        <div id="deleteSignedIn" class="deleteSignedInCard" hidden>
+          <div>
+            <p class="eyebrow">Step 2</p>
+            <h2>Delete the account</h2>
+            <p>You are signed in to the exact account that will be removed.</p>
+          </div>
+
+          <div class="deleteSignedInEmail">
+            Signed in as: <span id="deleteSignedInEmail">Not signed in</span>
+          </div>
+
+          <div class="deletionFeedbackGrid">
+            <label class="fieldGroup span2">
+              <span>Why are you leaving? <small>(optional)</small></span>
+              <textarea id="deleteAccountReasonInput" rows="3" placeholder="Optional: tell us what pushed you toward deleting the account."></textarea>
+            </label>
+            <label class="fieldGroup span2">
+              <span>What could we have made better? <small>(optional)</small></span>
+              <textarea id="deleteAccountImprovementInput" rows="3" placeholder="Optional: tell us what would have made Chronicle Canvas worth keeping."></textarea>
+            </label>
+          </div>
+
+          <p class="deleteSmallNote">This permanently removes the sign-in and the matching Chronicle Canvas data. Shared members only delete their own access. Paid owners also cancel the Chronicle Canvas subscription tied to that account.</p>
+
+          <div class="deleteActionRow">
+            <button id="deleteAccountBtn" type="button" class="secondaryBtn dangerBtn">Delete My Account</button>
+            <button id="deleteLogoutBtn" type="button" class="secondaryBtn">Log Out</button>
+          </div>
+        </div>
+      </article>
+
+      <aside class="deleteInfoStack">
+        <article>
+          <h3>What gets removed</h3>
+          <p>Your Chronicle Canvas sign-in and the account data linked to it. For paid owners, that includes the workspace data under that account. For shared members, it removes the member account and shared access.</p>
+        </article>
+        <article>
+          <h3>What to use instead</h3>
+          <p>If you only want a partial cleanup, use the <a href="delete-data.html">Delete Data</a> page to wipe specific things like timeline events, trash, files, or layout preferences without deleting the whole account.</p>
+        </article>
+        <article>
+          <h3>Quick links</h3>
+          <div class="deleteInlineLinks">
+            <a class="publicSecondary" href="app.html">Open App</a>
+            <a class="publicSecondary" href="privacy.html">Privacy</a>
+            <a class="publicSecondary" href="terms.html">Terms</a>
+            <a class="publicSecondary" href="mailto:info@chroniclecanvas.us">Support</a>
+          </div>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="delete-center.js"></script>
+</body>
+</html>

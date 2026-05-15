@@ -4,8 +4,10 @@
   "private": true,
   "description": "Separate iOS wrapper for Chronicle Canvas using Apple subscriptions and the hosted web app.",
   "scripts": {
+    "sync:web": "node scripts/sync-ios-web.mjs",
     "cap:sync": "npx cap sync ios",
-    "cap:open": "npx cap open ios"
+    "cap:open": "npx cap open ios",
+    "ios:sync": "npm run sync:web && npm run cap:sync"
   },
   "dependencies": {
     "@capacitor/cli": "^8.3.4",
