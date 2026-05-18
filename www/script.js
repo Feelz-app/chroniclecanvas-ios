@@ -9,7 +9,7 @@ import {
   reauthenticateWithCredential,
   updatePassword,
   signOut
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+} from "firebase/auth";
 
 import {
   collection,
@@ -23,19 +23,19 @@ import {
   setDoc,
   deleteField,
   writeBatch
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+} from "firebase/firestore";
 import {
   httpsCallable
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-functions.js";
+} from "firebase/functions";
 import {
   getToken as getAppCheckToken
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check.js";
+} from "firebase/app-check";
 import {
   ref,
   uploadBytes,
   getDownloadURL,
   deleteObject
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+} from "firebase/storage";
 
 window.addEventListener("DOMContentLoaded", () => {
   const defaultFolders = [
@@ -4437,6 +4437,10 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   async function ensureAppCheckReady() {
+    if (!appCheck) {
+      return null;
+    }
+
     let lastError = null;
 
     for (let attempt = 0; attempt < 3; attempt += 1) {
